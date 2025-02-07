@@ -18,8 +18,6 @@ def get_text_embedding(text):
             input=text,
             model="text-embedding-ada-002"  
         )
-        
-        # Extract and return the embedding vector
         embedding = response.data[0].embedding
         print("Embedding generated successfully.")
         # print(embedding)
@@ -43,7 +41,7 @@ if embedding:
                     "metadata": {"text": sample_text}  # Metadata (e.g., original text)
                 }
             ],
-            namespace="new_namespace"  # Use a new namespace
+            namespace="new_namespace"  
         )
         print(" Embedding inserted into Pinecone successfully.")
     except Exception as e:
