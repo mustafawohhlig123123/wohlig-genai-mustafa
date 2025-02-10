@@ -41,7 +41,7 @@ def retrieve_similar_context(query, top_k=5):
             vector=query_embedding,
             top_k=top_k,
             include_metadata=True,
-            namespace="new_namespace"  # Ensure same namespace as storage
+            namespace="web_scraped_data"  # Ensure same namespace as storage
         )
         contexts = [match['metadata']['text'] for match in results['matches']]
         print(f"Retrieved {len(contexts)} relevant context chunks.")
@@ -77,7 +77,7 @@ def generate_answer(query):
         print(f"Error generating answer: {str(e)}")
         return "An error occurred while generating the answer."
 
-query = "Where does Mustafa work?"
+query = "Wohlig and Google partnership"
 
 answer = generate_answer(query)
 print("\nGenerated Answer:\n", answer)
