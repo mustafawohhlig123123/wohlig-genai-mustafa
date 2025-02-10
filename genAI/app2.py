@@ -77,7 +77,8 @@ def generate_answer(query):
         print(f"Error generating answer: {str(e)}")
         return "An error occurred while generating the answer."
 
-query = "What does the document say about Mustafa?"
+query = "Where does Mustafa work?"
+
 answer = generate_answer(query)
 print("\nGenerated Answer:\n", answer)
 
